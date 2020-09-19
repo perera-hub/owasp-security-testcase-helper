@@ -8,7 +8,6 @@
                 >
                 <v-text-field
                     v-model="testCaseModel.testCaseID"
-                    :counter="10"
                     label="OWASP test case ID"
                     required
                 ></v-text-field>
@@ -20,7 +19,6 @@
                 >
                 <v-text-field
                     v-model="testCaseModel.title"
-                    :counter="10"
                     label="OWASP test case title"
                     required
                 ></v-text-field>
@@ -100,6 +98,9 @@
 <script>
 export default {
   name: 'TestCaseAddingForm',
+  props: {
+    isExistingTestCaseID: Function
+  },
   data () {
     return {
       testCaseModel: {
@@ -123,8 +124,13 @@ export default {
     }
   },
   methods: {
-    submit () {
-      this.$emit('testcasesubmitted', this.testCaseModel)
+    async submit () {
+      var testCaseIDExist = await this.isExistingTestCaseID(this.testCaseModel.testCaseID)
+      if (!testCaseIDExist) {
+        this.$emit('testcasesubmitted', this.testCaseModel)
+      } else {
+        alert('Test Case ID ' + this.testCaseModel.testCaseID + ' already exists.')
+      }
     }
   }
 }

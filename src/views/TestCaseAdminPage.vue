@@ -1,6 +1,6 @@
 <template>
 <div>
-  <test-case-adding-form v-on:testcasesubmitted="onSubmit"/>
+  <test-case-adding-form v-on:testcasesubmitted="onSubmit" :isExistingTestCaseID="isExistingTestCaseID"/>
   <test-case-grid-view :testCases="testCases"/>
 </div>
 </template>
@@ -54,7 +54,7 @@ export default {
     }
   },
   methods: {
-    onSubmit (eventArgs) {
+    async onSubmit (eventArgs) {
       defaultFirestore.collection('OWASPTestCases').doc(eventArgs.testCaseID).set({
         title: eventArgs.title,
         url: eventArgs.url,
@@ -79,6 +79,16 @@ export default {
     },
     onOWASPTestCaseCollectionSnapshotChangeError (err) {
       console.error('Error during collection snapshot change: ' + err)
+    },
+    async isExistingTestCaseID (testCaseID) {
+      try {
+        var docRef = await defaultFirestore.collection('OWASPTestCases').doc(testCaseID).get()
+        console.log('hu')
+        return docRef.exists
+      } catch (error) {
+        console.error('Error trying to check if test case ID exists ' + testCaseID, error)
+        return false
+      }
     }
   }
 }
