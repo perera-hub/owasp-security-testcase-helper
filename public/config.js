@@ -2,14 +2,14 @@ export default {
 
   defaultFireStoreConfigObject: {
 
-    apiKey: 'AIzaSyDJNJk3BLuGFf7sjla8xKVWdI2gJtEWhik',
-    authDomain: 'friendlyeats-e7f80.firebaseapp.com',
-    databaseURL: 'https://friendlyeats-e7f80.firebaseio.com',
-    projectId: 'friendlyeats-e7f80',
-    storageBucket: 'friendlyeats-e7f80.appspot.com',
-    messagingSenderId: '106828214223',
-    appId: '1:106828214223:web:59fc1ea3987bbdef936cba'
-
+    apiKey: 'AIzaSyDp0HWsUABUmHKhvdKTlHiKB9XS4YH89U0',
+    authDomain: 'owasp-security-testcase-helper.firebaseapp.com',
+    databaseURL: 'https://owasp-security-testcase-helper.firebaseio.com',
+    projectId: 'owasp-security-testcase-helper',
+    storageBucket: 'owasp-security-testcase-helper.appspot.com',
+    messagingSenderId: '1029419128427',
+    appId: '1:1029419128427:web:97cb4eb11f4c8ed2d3432e',
+    measurementId: 'G-NXPYCMTDVD'
   },
 
   weatherAPIConfig: {

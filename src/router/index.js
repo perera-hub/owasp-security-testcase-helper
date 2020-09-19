@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
+import TestCaseAdminPage from '../views/TestCaseAdminPage.vue'
 
 Vue.use(VueRouter)
 
@@ -13,24 +14,24 @@ const routes = [
      */
 
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'TestCaseAdminPage',
+    component: TestCaseAdminPage
 
-  },
-  {
-
-    /**
-     * This is an example of how a component can be lazy loaded.
-     * @author Heshan Perera
-     */
-
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
+  // {
+
+  //   /**
+  //    * This is an example of how a component can be lazy loaded.
+  //    * @author Heshan Perera
+  //    */
+
+  //   path: '/about',
+  //   name: 'About',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  // }
 ]
 
 /**
